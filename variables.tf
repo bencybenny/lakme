@@ -18,3 +18,12 @@ variable "instance_type" {
   type        = string
   description = "type of the instance"
   }
+variable "hosted_zone_name" {
+  type        = string
+  description = "domain name hosted in route 53"
+}
+variable "hostname" {
+  type        = string
+  description = "hostname"
+  default     = "terraform"
+}

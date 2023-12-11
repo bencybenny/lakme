@@ -91,3 +91,13 @@ ami                    = var.ami_id
     owner   = var.project_owner
   }
 }
+#----------------------------------------------------------------------------
+#                      Creating Records in Route53
+#----------------------------------------------------------------------------
+resource "aws_route53_record" "frontend" {
+  zone_id = data.aws_route53_zone.hostedzone.id
+  name    = "${var.hostname}.${var.hosted_zone_name}"
+  type    = "A"
+  ttl     = "30"
+  records = [aws_instance.frontend.public_ip]
+}
