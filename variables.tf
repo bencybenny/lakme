@@ -13,11 +13,11 @@ variable "project_owner" {
 variable "ami_id" {
   type        = string
   description = "ami id of the instance"
-  }
+}
 variable "instance_type" {
   type        = string
   description = "type of the instance"
-  }
+}
 variable "hosted_zone_name" {
   type        = string
   description = "domain name hosted in route 53"
