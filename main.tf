@@ -31,6 +31,14 @@ resource "aws_security_group" "webserver_access" {
     cidr_blocks      = ["0.0.0.0/0"]
     ipv6_cidr_blocks = ["::/0"]
   }
+ingress {
+    description      = "nagios traffic"
+    from_port        = 800
+    to_port          = 800
+    protocol         = "tcp"
+    cidr_blocks      = ["0.0.0.0/0"]
+    ipv6_cidr_blocks = ["::/0"]
+  }
 
   egress {
     from_port        = 0
